@@ -1,5 +1,4 @@
-
-"""
+"""#========================================================================================
 Friend once asked me to help him with an online coding challenge
 the point was to provide dynamic answer/string depending on number of likes one's tweet got
 to_return is the static part for no/1/2/3 likes and brackets are meant to display names,
@@ -13,7 +12,7 @@ can lead to running out of memory quite easily - to avoid it, many may find "".j
 although it obscures the code, so if we omit talking about the overhead - custom context manager is the way
 
 It's meant to store all the strings we want to add in a list, and when we're done it concatenates all of them
-"""
+"""#========================================================================================
 
 to_return = {
     0: "no one likes it",
@@ -25,11 +24,11 @@ to_return = {
 
 class StringMerger:
     """
-    A simple string merger, utilizing power of string.join()
-    using simple concatenation operators with extendable API for error handling
+    A simple string merger utilizing power of string.join()
+    uses simple concatenation operators with extendable API for error handling
     Usable withing with statement scope (WSS)
     """
-    def __init__(self, *, init_string="", separator=""):
+    def __init__(self, init_string="", separator=""):
         self._string = init_string
         self._separator = separator
         self._to_merge_list = []
@@ -62,7 +61,7 @@ class StringMerger:
     def __str__(self): # for printing the string
         return self._string
 
-    def get_string(self): # for further managing the string
+    def get_string(self): # for managing the string further
         return self._string
 
 
